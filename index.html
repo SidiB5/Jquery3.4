@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Exercice 4</title>
+</head>
+<body>
+    <div class="rectangle"></div><br/>
+    <div class="manyButton">
+        <button id="moreHeight"> Augmentez la hauteur du rectangle</button>
+        <button id="makeItGreen">Mettre le rectangle en vert</button>
+        <button id="initialColor">Remettre le rectangle dans sa couleur initiale</button>
+        <button id="hideRectangle">Faire disparaître le rectangle</button>
+        <button id="showRectangle">Faire réapparaître le rectangle</button>
+    </div>
+    <script>
+        var $rectangleHeight = $('.rectangle').height();
+        console.log($rectangleHeight);
+        
+         $('#moreHeight').on('click', () => {
+         if($rectangleHeight < 100 ){
+            $rectangleHeight += 10;
+            console.log($rectangleHeight);
+            $('.rectangle').height($rectangleHeight);
+         }else if($rectangleHeight >= 100){
+             $('.rectangle').height(10);
+         };
+        });
+        $('#makeItGreen').on('click', () => {
+            $('.rectangle').css('background-color', 'green');
+        });
+        $('#initialColor').on('click', () => {
+            $('.rectangle').css('background-color', '');
+        });
+        $('#hideRectangle').on('click', () => {
+            $('.rectangle').hide();
+        })
+        $('#showRectangle').on('click', () => {
+            $('.rectangle').show();
+        })
+    </script>
+</body>
+</html>
