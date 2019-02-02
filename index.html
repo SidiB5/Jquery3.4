@@ -18,30 +18,32 @@
         <button id="showRectangle">Faire réapparaître le rectangle</button>
     </div>
     <script>
-        var $rectangleHeight = $('.rectangle').height();
-        console.log($rectangleHeight);
-        
-         $('#moreHeight').on('click', () => {
-         if($rectangleHeight < 100 ){
-            $rectangleHeight += 10;
+        $(document).ready(() => {
+            var $rectangleHeight = $('.rectangle').height();
             console.log($rectangleHeight);
-            $('.rectangle').height($rectangleHeight);
-         }else if($rectangleHeight >= 100){
-             $('.rectangle').height(10);
-         };
+            
+            $('#moreHeight').on('click', () => {
+            if($rectangleHeight < 100 ){
+                $rectangleHeight += 10;
+                console.log($rectangleHeight);
+                $('.rectangle').height($rectangleHeight);
+            }else if($rectangleHeight >= 100){
+                $('.rectangle').height(10);
+            };
+            });
+            $('#makeItGreen').on('click', () => {
+                $('.rectangle').css('background-color', 'green');
+            });
+            $('#initialColor').on('click', () => {
+                $('.rectangle').css('background-color', '');
+            });
+            $('#hideRectangle').on('click', () => {
+                $('.rectangle').hide();
+            })
+            $('#showRectangle').on('click', () => {
+                $('.rectangle').show();
+            })
         });
-        $('#makeItGreen').on('click', () => {
-            $('.rectangle').css('background-color', 'green');
-        });
-        $('#initialColor').on('click', () => {
-            $('.rectangle').css('background-color', '');
-        });
-        $('#hideRectangle').on('click', () => {
-            $('.rectangle').hide();
-        })
-        $('#showRectangle').on('click', () => {
-            $('.rectangle').show();
-        })
     </script>
 </body>
 </html>
